@@ -1,101 +1,90 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import NewsHighlights from './components/NewsHighlights'
+import AIEnhancedSearch from './components/AIEnhancedSearch'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-gradient-to-b from-secondary to-white min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden perspective-3d">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-background.jpg"
+            alt="School background"
+            layout="fill"
+            objectFit="cover"
+            priority
+            className="rotate-3d"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        <div className="container mx-auto px-4 z-20 text-center">
+          <h1 className="text-4xl md:text-6xl text-white font-bold mb-4 animate-float text-3d">
+            Welcome to St. Peter's Berry School
+          </h1>
+          <p className="text-xl text-white mb-8">Nurturing Minds, Shaping Futures</p>
+          <Link href="/admissions" className="btn-primary text-lg inline-block">
+            Apply Now
+          </Link>
+        </div>
+      </section>
+
+      {/* AI-Enhanced Search Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-primary text-3d">Search Our School</h2>
+          <AIEnhancedSearch />
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-16 bg-gradient-radial">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-8 text-center text-white text-3d">Our Mission</h2>
+          <p className="text-xl text-center max-w-3xl mx-auto leading-relaxed text-white">
+            St. Peter's Berry School is committed to providing a nurturing and inclusive learning environment
+            that empowers students to achieve academic excellence, develop strong character, and become
+            responsible global citizens.
+          </p>
+        </div>
+      </section>
+
+      {/* Quick Links Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-primary text-3d">Quick Links</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Link href="/admissions" className="card group perspective-3d">
+              <div className="rotate-3d">
+                <h3 className="text-xl font-bold mb-2 text-primary group-hover:text-accent transition duration-300">Admissions</h3>
+                <p>Learn about our admission process and apply online.</p>
+              </div>
+            </Link>
+            <Link href="/fee-structure" className="card group perspective-3d">
+              <div className="rotate-3d">
+                <h3 className="text-xl font-bold mb-2 text-primary group-hover:text-accent transition duration-300">Fee Structure</h3>
+                <p>View our comprehensive fee structure and payment options.</p>
+              </div>
+            </Link>
+            <Link href="/contact" className="card group perspective-3d">
+              <div className="rotate-3d">
+                <h3 className="text-xl font-bold mb-2 text-primary group-hover:text-accent transition duration-300">Contact Us</h3>
+                <p>Get in touch with us for any inquiries or information.</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* News Highlights Section */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-primary text-3d">Latest News</h2>
+          <NewsHighlights />
+        </div>
+      </section>
     </div>
-  );
+  )
 }
+

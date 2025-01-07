@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #8B4513;
+  --secondary: #F5DEB3;
+  --accent: #D2691E;
+}
+
+@layer base {
+  body {
+	@apply antialiased bg-gradient-to-b from-secondary to-white min-h-screen;
+  }
+}
+
+@layer components {
+  .btn-primary {
+	@apply bg-primary text-white py-2 px-4 rounded-md hover:bg-opacity-90 transition duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .card {
+	@apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 transform hover:scale-105;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.text-3d {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--secondary) 0%, var(--primary) 100%);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.perspective-3d {
+  perspective: 1000px;
+}
+
+.rotate-3d {
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate-3d:hover {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
